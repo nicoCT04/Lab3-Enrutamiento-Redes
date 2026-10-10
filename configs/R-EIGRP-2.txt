@@ -1,0 +1,24 @@
+enable
+configure terminal
+hostname R-EIGRP-2
+no ip domain-lookup
+banner motd #R-EIGRP-2 | Sitio de acceso EIGRP AS 100#
+!
+interface Serial0/0/0
+ description Enlace a R-EIGRP-1 Se0/0/0 | 10.0.0.12/30
+ ip address 10.0.0.14 255.255.255.252
+ no shutdown
+!
+interface Serial0/0/1
+ description Enlace a R-CENTRAL Se0/1/1 | 10.0.0.20/30 | DCE
+ ip address 10.0.0.21 255.255.255.252
+ clock rate 128000
+ no shutdown
+!
+interface GigabitEthernet0/0
+ description LAN Datos 172.16.0.0/25 hacia SW-EIGRP-2 Gi0/1
+ ip address 172.16.0.1 255.255.255.128
+ no shutdown
+!
+end
+write memory

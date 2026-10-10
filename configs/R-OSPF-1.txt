@@ -1,0 +1,25 @@
+enable
+configure terminal
+hostname R-OSPF-1
+no ip domain-lookup
+banner motd #R-OSPF-1 | Sitio de acceso OSPF area 0#
+!
+interface Serial0/0/0
+ description Enlace a R-OSPF-2 Se0/0/0 | 10.0.0.0/30 | DCE
+ ip address 10.0.0.1 255.255.255.252
+ clock rate 128000
+ no shutdown
+!
+interface Serial0/0/1
+ description Enlace a R-CENTRAL Se0/0/0 | 10.0.0.4/30 | DCE
+ ip address 10.0.0.5 255.255.255.252
+ clock rate 128000
+ no shutdown
+!
+interface GigabitEthernet0/0
+ description Trunk hacia SW-OSPF-1 Gi0/1
+ no ip address
+ no shutdown
+!
+end
+write memory
