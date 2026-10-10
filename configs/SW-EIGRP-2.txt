@@ -1,0 +1,14 @@
+enable
+configure terminal
+hostname SW-EIGRP-2
+no ip domain-lookup
+!
+interface FastEthernet0/1
+ description PC-EIGRP2
+ switchport mode access
+!
+interface GigabitEthernet0/1
+ description Uplink hacia R-EIGRP-2 Gi0/0
+!
+end
+write memory

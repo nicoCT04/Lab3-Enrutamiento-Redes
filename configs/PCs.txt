@@ -1,0 +1,9 @@
+! Direccionamiento de equipos finales (Desktop > Command Prompt de cada PC)
+! Sintaxis Packet Tracer: ipconfig <ip> <mascara> <gateway>
+PC-OSPF1-V10   : ipconfig 192.168.1.10 255.255.255.192 192.168.1.1
+PC-OSPF1-V30   : ipconfig 192.168.1.70 255.255.255.240 192.168.1.65
+PC-OSPF2       : ipconfig 192.168.0.10 255.255.255.0 192.168.0.1
+PC-EIGRP1-V10  : ipconfig 172.16.0.130 255.255.255.192 172.16.0.129
+PC-EIGRP1-V20  : ipconfig 172.16.0.200 255.255.255.224 172.16.0.193
+PC-EIGRP1-V99  : ipconfig 172.16.0.230 255.255.255.240 172.16.0.225
+PC-EIGRP2      : ipconfig 172.16.0.10 255.255.255.128 172.16.0.1

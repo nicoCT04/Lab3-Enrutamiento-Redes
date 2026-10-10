@@ -21,5 +21,16 @@ interface GigabitEthernet0/0
  no ip address
  no shutdown
 !
+! --- Router-on-a-stick (enrutamiento entre VLANs) ---
+interface GigabitEthernet0/0.10
+ description Gateway VLAN 10 Datos | 192.168.1.0/26
+ encapsulation dot1Q 10
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet0/0.30
+ description Gateway VLAN 30 Admin-Servidores | 192.168.1.64/28
+ encapsulation dot1Q 30
+ ip address 192.168.1.65 255.255.255.240
+!
 end
 write memory
