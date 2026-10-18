@@ -30,5 +30,12 @@ router ospf 1
  network 10.0.0.4 0.0.0.3 area 0
  network 10.0.0.8 0.0.0.3 area 0
 !
+! --- EIGRP AS 100 (solo enlaces hacia R-EIGRP-1 y R-EIGRP-2) ---
+router eigrp 100
+ eigrp router-id 3.3.3.3
+ no auto-summary
+ network 10.0.0.16 0.0.0.3
+ network 10.0.0.20 0.0.0.3
+!
 end
 write memory

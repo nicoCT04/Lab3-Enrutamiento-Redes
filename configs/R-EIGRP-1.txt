@@ -37,5 +37,18 @@ interface GigabitEthernet0/0.99
  encapsulation dot1Q 99
  ip address 172.16.0.225 255.255.255.240
 !
+! --- EIGRP AS 100 ---
+router eigrp 100
+ eigrp router-id 4.4.4.4
+ no auto-summary
+ network 172.16.0.128 0.0.0.63
+ network 172.16.0.192 0.0.0.31
+ network 172.16.0.224 0.0.0.15
+ network 10.0.0.12 0.0.0.3
+ network 10.0.0.16 0.0.0.3
+ passive-interface GigabitEthernet0/0.10
+ passive-interface GigabitEthernet0/0.20
+ passive-interface GigabitEthernet0/0.99
+!
 end
 write memory

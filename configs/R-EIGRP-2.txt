@@ -20,5 +20,14 @@ interface GigabitEthernet0/0
  ip address 172.16.0.1 255.255.255.128
  no shutdown
 !
+! --- EIGRP AS 100 ---
+router eigrp 100
+ eigrp router-id 5.5.5.5
+ no auto-summary
+ network 172.16.0.0 0.0.0.127
+ network 10.0.0.12 0.0.0.3
+ network 10.0.0.20 0.0.0.3
+ passive-interface GigabitEthernet0/0
+!
 end
 write memory
