@@ -32,5 +32,15 @@ interface GigabitEthernet0/0.30
  encapsulation dot1Q 30
  ip address 192.168.1.65 255.255.255.240
 !
+! --- OSPF area 0 ---
+router ospf 1
+ router-id 1.1.1.1
+ network 192.168.1.0 0.0.0.63 area 0
+ network 192.168.1.64 0.0.0.15 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ passive-interface GigabitEthernet0/0.10
+ passive-interface GigabitEthernet0/0.30
+!
 end
 write memory
