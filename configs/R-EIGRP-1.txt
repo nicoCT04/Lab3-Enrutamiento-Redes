@@ -50,5 +50,15 @@ router eigrp 100
  passive-interface GigabitEthernet0/0.20
  passive-interface GigabitEthernet0/0.99
 !
+! --- Balanceo 75/25: secundaria ~3x la metrica de la principal ---
+interface Serial0/0/0
+ delay 2100
+!
+interface Serial0/0/1
+ delay 17253
+!
+router eigrp 100
+ variance 3
+!
 end
 write memory

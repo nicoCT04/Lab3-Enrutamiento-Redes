@@ -42,5 +42,9 @@ router ospf 1
  passive-interface GigabitEthernet0/0.10
  passive-interface GigabitEthernet0/0.30
 !
+! --- Balanceo ECMP: directo 128 = via R-CENTRAL 64+64 ---
+interface Serial0/0/0
+ ip ospf cost 128
+!
 end
 write memory
