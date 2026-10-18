@@ -37,5 +37,22 @@ router eigrp 100
  network 10.0.0.16 0.0.0.3
  network 10.0.0.20 0.0.0.3
 !
+! --- Redistribucion mutua ---
+router eigrp 100
+ redistribute ospf 1 metric 1544 2000 255 1 1500
+!
+router ospf 1
+ redistribute eigrp 100 subnets metric-type 1
+!
+! --- Sumarizacion ---
+router ospf 1
+ summary-address 172.16.0.0 255.255.255.0
+!
+interface Serial0/1/0
+ ip summary-address eigrp 100 192.168.0.0 255.255.254.0
+!
+interface Serial0/1/1
+ ip summary-address eigrp 100 192.168.0.0 255.255.254.0
+!
 end
 write memory
