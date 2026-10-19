@@ -33,6 +33,7 @@ Incluye VLSM, VLANs con enrutamiento entre VLANs, balanceo ECMP (OSPF), balanceo
 | `configs/` | Configuración IOS de cada router y switch, lista para pegar en la CLI |
 | `evidencias/` | Salidas de `show` y capturas de ping/tracert (base para el PDF2) |
 | `Lab3-Enrutamiento.pkt` | Archivo de Packet Tracer |
+| `PDF2-Evidencias.pdf` | Tablas de enrutamiento, balanceo OSPF/EIGRP, ping y tracert |
 
 ## Bloques de direccionamiento
 
