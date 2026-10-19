@@ -28,6 +28,7 @@ Incluye VLSM, VLANs con enrutamiento entre VLANs, balanceo ECMP (OSPF), balanceo
 | Carpeta / archivo | Contenido |
 |---|---|
 | `docs/vlsm-direccionamiento.md` | Cálculo VLSM paso a paso y tabla de direccionamiento (base para el PDF1) |
+| `docs/conceptos.md` | Redistribución, E1/E2, ECMP, variance y sumarización con sus cálculos (base para el PDF1) |
 | `docs/referencias/` | Enunciado del laboratorio y material de apoyo del curso |
 | `configs/` | Configuración IOS de cada router y switch, lista para pegar en la CLI |
 | `evidencias/` | Salidas de `show` y capturas de ping/tracert (base para el PDF2) |

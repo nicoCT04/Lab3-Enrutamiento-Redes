@@ -41,13 +41,13 @@ router eigrp 100
 router eigrp 100
  redistribute ospf 1 metric 1544 2000 255 1 1500
 !
+! EIGRP -> OSPF: PT no soporta summary-address ni filtros en OSPF, asi que el lado
+! EIGRP se inyecta solo como resumen (estatica a Null0 redistribuida como E1)
+ip route 172.16.0.0 255.255.255.0 Null0
 router ospf 1
- redistribute eigrp 100 subnets metric-type 1
+ redistribute static metric-type 1 subnets
 !
-! --- Sumarizacion ---
-router ospf 1
- summary-address 172.16.0.0 255.255.255.0
-!
+! --- Sumarizacion hacia EIGRP ---
 interface Serial0/1/0
  ip summary-address eigrp 100 192.168.0.0 255.255.254.0
 !

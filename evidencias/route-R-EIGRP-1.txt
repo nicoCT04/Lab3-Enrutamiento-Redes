@@ -1,0 +1,35 @@
+R-EIGRP-1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/8 is variably subnetted, 8 subnets, 2 masks
+D EX    10.0.0.0/30 [170/3219456] via 10.0.0.14, 00:26:41, Serial0/0/0
+                    [170/6586624] via 10.0.0.18, 00:26:41, Serial0/0/1
+D EX    10.0.0.4/30 [170/3219456] via 10.0.0.14, 00:27:17, Serial0/0/0
+                    [170/6586624] via 10.0.0.18, 00:27:34, Serial0/0/1
+D EX    10.0.0.8/30 [170/3219456] via 10.0.0.14, 00:27:17, Serial0/0/0
+                    [170/6586624] via 10.0.0.18, 00:27:34, Serial0/0/1
+C       10.0.0.12/30 is directly connected, Serial0/0/0
+L       10.0.0.13/32 is directly connected, Serial0/0/0
+C       10.0.0.16/30 is directly connected, Serial0/0/1
+L       10.0.0.17/32 is directly connected, Serial0/0/1
+D       10.0.0.20/30 [90/2707456] via 10.0.0.14, 00:27:18, Serial0/0/0
+                     [90/6586624] via 10.0.0.18, 00:27:34, Serial0/0/1
+     172.16.0.0/16 is variably subnetted, 7 subnets, 5 masks
+D       172.16.0.0/25 [90/2195712] via 10.0.0.14, 00:27:18, Serial0/0/0
+                      [90/6586880] via 10.0.0.18, 00:27:18, Serial0/0/1
+C       172.16.0.128/26 is directly connected, GigabitEthernet0/0.10
+L       172.16.0.129/32 is directly connected, GigabitEthernet0/0.10
+C       172.16.0.192/27 is directly connected, GigabitEthernet0/0.20
+L       172.16.0.193/32 is directly connected, GigabitEthernet0/0.20
+C       172.16.0.224/28 is directly connected, GigabitEthernet0/0.99
+L       172.16.0.225/32 is directly connected, GigabitEthernet0/0.99
+D    192.168.0.0/23 [90/3219456] via 10.0.0.14, 00:26:52, Serial0/0/0
+                    [90/6586624] via 10.0.0.18, 00:26:52, Serial0/0/1
